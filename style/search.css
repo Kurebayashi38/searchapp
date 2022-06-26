@@ -1,0 +1,23 @@
+#form {  
+    position: relative;
+    text-align: center; 
+}
+
+#keyword {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 155px;
+    height: 36px;
+    border: 1px solid #D9D9D9;
+    font-size: 15px;
+    color: #999;
+}
+     
+#search_btn {
+    position: absolute;
+    top: 0;
+    left: 159px;
+    cursor: pointer;
+}
+    
