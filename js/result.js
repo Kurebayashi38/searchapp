@@ -1,3 +1,4 @@
+//URLから取得したいオブジェクト
 let para = {
 
   target : "q", //取得したいクエリ
@@ -6,7 +7,7 @@ let para = {
 
 };
 
-//api設定
+//apiから取得したいオブジェクト
 let urlParameter = {
   apikey: "d97e536368b43ab4",
   req : "Access-Control-Allow-Origin",
@@ -50,7 +51,7 @@ async function requ (){
   console.log("info");
     //APIURLを動的に作成
     let url = `http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${urlParameter["apikey"]}&lat=${urlParameter["lat"]}&lng=${urlParameter["lng"]}&format=${urlParameter["format"]}`; 
-    // レスポンスの本文を読み JSON としてパースする
+   
     console.log(url);
     const res = await fetch(url ,{
       mode: 'cors'
@@ -64,19 +65,13 @@ async function requ (){
       throw new Error(`${res.status} ${res.statusText}`);
     }
     const jdata = await res.text(); //レスポンスをテキスト形式で格納
-    console.log(jdata)
-    /*
-    const obj = JSON.parse(jdata)
-    console.log('店名:' +obj.results.shop[0].name)
-    console.log('住所:' +obj.results.shop[0].address)
-    console.log('URL ' +obj.results.shop[0].urls.pc)
-    */
+    console.log(jdata);
 
 }
-    
 
-  //変数(指定半径)の処理
 /*
+変数(指定半径)の処理
+三平方の定理をつかって距離を求めさらに検索結果をしぼっていく。
 var distance  = function(radius){
 
     
